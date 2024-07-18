@@ -1,14 +1,11 @@
 package com.sany.controller;
 
-import com.sany.pojo.Pay;
+
 import com.sany.pojo.PayDTO;
 import com.sany.resp.ResultData;
 import jakarta.annotation.Resource;
-import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 /**
  * @author: SanyQAQ
@@ -54,7 +51,7 @@ public class OrderController {
     }
 
     @GetMapping("/pay/get/all")
-    public ResultData<List<Pay>> getAllOrder(){
+    public ResultData getAllOrder(){
         return restTemplate.getForObject(Payment_URL+"/pay/get/all",ResultData.class);
     }
 

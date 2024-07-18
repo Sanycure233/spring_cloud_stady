@@ -12,6 +12,7 @@
         <module>mybatis_generator</module>
         <module>cloud_provider_payment8001</module>
         <module>cloud_consumer_order80</module>
+        <module>cloud_api_commons</module>
     </modules>
 
 

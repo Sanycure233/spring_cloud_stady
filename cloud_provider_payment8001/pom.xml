@@ -18,7 +18,12 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.sany</groupId>
+            <artifactId>cloud_api_commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--分割线-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
