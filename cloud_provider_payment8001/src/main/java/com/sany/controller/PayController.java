@@ -34,7 +34,7 @@ public class PayController {//用统一的格式返回数据
         return ResultData.success(payService.delete(id));
     }
 
-    @PutMapping("/updata")
+    @PutMapping("/update")
     public ResultData<String> updatePay(@RequestBody PayDTO payDTO){
         Pay pay = new Pay();
         BeanUtils.copyProperties(payDTO,pay);
