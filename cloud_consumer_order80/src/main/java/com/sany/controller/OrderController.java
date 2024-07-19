@@ -18,7 +18,9 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/consumer")
 public class OrderController {
     //写死的访问地址
-    private static final String Payment_URL="http://localhost:8001";
+    /*private static final String Payment_URL="http://localhost:8001";*/
+    //可以不用写死访问地址了
+    private static final String Payment_URL="http://cloud-payment-service";
 
     @Resource
     private RestTemplate restTemplate;

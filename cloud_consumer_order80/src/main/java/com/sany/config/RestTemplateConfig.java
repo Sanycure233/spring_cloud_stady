@@ -1,5 +1,6 @@
 package com.sany.config;
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +14,8 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestTemplateConfig {
     @Bean
+    //使这个类支持负载均衡
+    @LoadBalanced
     RestTemplate getRestTemplate(){
         return new RestTemplate();
     }

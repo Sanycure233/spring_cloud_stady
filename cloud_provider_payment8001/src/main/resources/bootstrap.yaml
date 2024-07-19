@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: cloud-payment-service
+
+  cloud:
+    consul:
+      port: 8500
+      host: localhost
+      #表示8001端口入驻consul的名称，就是服务的发现，下面那个是入驻的名称
+      discovery:
+        service-name: ${spring.application.name}
+      #表示配置文件的格式，文件中以-为间隔，默认是逗号看着不习惯
+      config:
+        profile-separator: '-'
+        format: yaml
+        #表示每55秒钟获取外部资源配置
+        watch:
+          wait-time: 55
+
+
+
+  #修改返回前端的时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8

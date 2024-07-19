@@ -7,6 +7,8 @@ import com.sany.service.PayService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +23,7 @@ import java.util.List;
 public class PayController {//用统一的格式返回数据
     @Resource
     PayService payService;
+
 
     @PostMapping("/add")
     public ResultData<String> addPay(@RequestBody Pay pay){
@@ -52,6 +55,14 @@ public class PayController {//用统一的格式返回数据
     public ResultData<List<Pay>> getAll(){
         return ResultData.success(payService.getAll());
     }
+
+    @org.springframework.beans.factory.annotation.Value("${server.port}")
+    private String port;
+    @GetMapping("/get/info")
+    public ResultData<String> getInfoByConsul(@Value("${sany.info}") String info){
+        return ResultData.success("sanyInfo:"+info+"\t"+"port:"+port);
+    }
+
 }
 /*@RestController
 @Slf4j
